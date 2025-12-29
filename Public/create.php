@@ -10,3 +10,6 @@ if ($judul !== '') {
     $repo = new TodoRepository($pdo);
     $repo->create($judul, $deskripsi);
 }
+
+header("Location: index.php");
+exit;
