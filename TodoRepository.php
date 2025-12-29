@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/Todo.php';
+require_once __DIR__ . '/Todo.php'; 
 
 // Repository untuk akses data todo
 class TodoRepository {
