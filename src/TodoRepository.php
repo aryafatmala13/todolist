@@ -1,9 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../config.php';
-require_once __DIR__ . '/Todo.php'; 
+require_once __DIR__ . '/Todo.php';
 
-// Repository untuk akses data todo
 class TodoRepository {
 
     private $pdo;
@@ -12,25 +11,51 @@ class TodoRepository {
         $this->pdo = $pdo;
     }
 
-    // Ambil semua data todo
     public function getAll() {
-        $stmt = $this->pdo->query("SELECT * FROM todos ORDER BY id DESC");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $this->pdo->query("SELECT * FROM todolist ORDER BY id DESC");
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $todos = [];
+        foreach ($rows as $row) {
+            $todos[] = new Todo(
+                $row['id'],
+                $row['Judul'],
+                $row['deskripsi'],
+                $row['status'],
+                $row['created_at']
+            );
+        }
+        return $todos;
     }
 
-    // Simpan todo baru
-    public function create($title, $description) {
+    public function create($judul, $deskripsi) {
         $stmt = $this->pdo->prepare(
-            "INSERT INTO todos (title, description) VALUES (?, ?)"
+            "INSERT INTO todolist (Judul, deskripsi) VALUES (?, ?)"
         );
-        return $stmt->execute([$title, $description]);
+        return $stmt->execute([$judul, $deskripsi]);
     }
 
-    // Hapus todo
     public function delete($id) {
         $stmt = $this->pdo->prepare(
-            "DELETE FROM todos WHERE id = ?"
+            "DELETE FROM todolist WHERE id = ?"
         );
         return $stmt->execute([$id]);
     }
+    // Ambil 1 todo berdasarkan id
+public function getById($id) {
+    $stmt = $this->pdo->prepare("SELECT * FROM todolist WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Update todo
+public function update($id, $judul, $deskripsi, $status) {
+    $stmt = $this->pdo->prepare(
+        "UPDATE todolist 
+         SET Judul = ?, deskripsi = ?, status = ?
+         WHERE id = ?"
+    );
+    return $stmt->execute([$judul, $deskripsi, $status, $id]);
+}
+
 }
