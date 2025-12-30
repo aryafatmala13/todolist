@@ -45,8 +45,19 @@ class TodoRepository {
 public function getById($id) {
     $stmt = $this->pdo->prepare("SELECT * FROM todolist WHERE id = ?");
     $stmt->execute([$id]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) return null;
+
+    return new Todo(
+        $row['id'],
+        $row['Judul'],
+        $row['deskripsi'],
+        $row['status'],
+        $row['created_at']
+    );
 }
+
 
 // Update todo
 public function update($id, $judul, $deskripsi, $status) {

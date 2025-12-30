@@ -29,7 +29,7 @@ $todos = $repo->getAll();
     <li>
         <strong><?= htmlspecialchars($todo->judul) ?></strong><br>
         <?= htmlspecialchars($todo->deskripsi) ?><br>
-        Status: <?= $todo->status ?>
+        Status: <?= htmlspecialchars($todo->status) ?>
 
         <form action="delete.php" method="post" style="display:inline">
             <input type="hidden" name="id" value="<?= $todo->id ?>">
@@ -37,7 +37,9 @@ $todos = $repo->getAll();
         </form>
     </li>
 <?php endforeach; ?>
+
 </ul>
+
 
 </body>
 </html>
