@@ -4,7 +4,7 @@
 $host = "localhost";
 $dbname = "todo_list";
 $user = "root";
-$pass = "";
+$pass = "dika910700";
 
 // Membuat koneksi PDO
 try {
