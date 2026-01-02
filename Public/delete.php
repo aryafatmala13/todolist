@@ -7,3 +7,6 @@ $id = (int) $_POST['id'];
 
 $repo = new TodoRepository($pdo);
 $repo->delete($id);
+
+header("Location: index.php");
+exit;
