@@ -12,3 +12,10 @@ if (!$todo) {
     die("Data tidak ditemukan");
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Todo</title>
+</head>
+<body>
