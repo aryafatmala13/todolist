@@ -17,26 +17,28 @@ if (!$todo) {
 <html>
 <head>
     <title>Edit Todo</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<h2>Edit Todo</h2>
+<div class="container">
+    <h2>Edit Todolist</h2>
 
-<form action="update.php" method="post">
-    <input type="hidden" name="id" value="<?= $todo['id'] ?>">
+    <form action="update.php" method="post">
+    <input type="hidden" name="id" value="<?= $todo->id ?>">
 
     <label>Judul</label><br>
-    <input type="text" name="judul" value="<?= htmlspecialchars($todo['Judul']) ?>" required>
+    <input type="text" name="judul" value="<?= htmlspecialchars($todo->judul) ?>" required>
     <br><br>
 
     <label>Deskripsi</label><br>
-    <textarea name="deskripsi"><?= htmlspecialchars($todo['deskripsi']) ?></textarea>
+    <textarea name="deskripsi"><?= htmlspecialchars($todo->deskripsi) ?></textarea>
     <br><br>
 
     <label>Status</label><br>
     <select name="status">
-        <option value="pending" <?= $todo['status'] == 'pending' ? 'selected' : '' ?>>Pending</option>
-        <option value="selesai" <?= $todo['status'] == 'selesai' ? 'selected' : '' ?>>Selesai</option>
+        <option value="pending" <?= $todo->status == 'pending' ? 'selected' : '' ?>>Pending</option>
+        <option value="selesai" <?= $todo->status == 'selesai' ? 'selected' : '' ?>>Selesai</option>
     </select>
     <br><br>
 
