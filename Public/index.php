@@ -31,6 +31,7 @@ $todos = $repo->getAll();
     <li>
         <strong><?= htmlspecialchars($todo->judul) ?></strong><br>
         <?= htmlspecialchars($todo->deskripsi) ?><br>
+        <small>Dibuat: <?= date('d-m-Y H:i', strtotime($todo->created_at)) ?></small><br>
         <span class="status-badge">Status: <?= htmlspecialchars($todo->status) ?></span>
 
         <div style="margin-top: 10px;">
