@@ -42,13 +42,17 @@ $todos = $repo->getAll();
         <strong><?= htmlspecialchars($todo->judul) ?></strong><br>
         <?= htmlspecialchars($todo->deskripsi) ?><br>
         <small>Dibuat: <?= date('d-m-Y H:i', strtotime($todo->created_at)) ?></small><br>
-        <span class="status-badge">Status: <?= htmlspecialchars($todo->status) ?></span>
+       <?php if($todo->status == 'selesai'): ?>
+    <span class="status-selesai">Status: selesai</span>
+<?php else: ?>
+    <span class="status-pending">Status: pending</span>
+<?php endif; ?>
 
         <div style="margin-top: 10px;">
 
             <!-- Link edit -->
                 <a href="edit.php?id=<?= $todo->id ?>" class="btn-edit">Edit</a>
-                
+
             <!-- Form hapus -->
             <form action="delete.php" method="post" style="display:inline">
                 <input type="hidden" name="id" value="<?= $todo->id ?>">

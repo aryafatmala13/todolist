@@ -19,6 +19,21 @@ body{
     background-repeat: no-repeat;
 }
 
+.status-selesai{
+    background:#2ecc71;
+    color:white;
+    padding:3px 8px;
+    border-radius:5px;
+    display:inline-block;
+}
+
+.status-pending{
+    background:#e74c3c;
+    color:white;
+    padding:3px 8px;
+    border-radius:5px;
+    display:inline-block;
+}
 
 .container {
     max-width: 600px;
