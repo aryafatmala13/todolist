@@ -32,7 +32,7 @@ Penjelasan Singkat Fungsi Aplikasi
     1. Arya Putra Fatmala - 240030211 - aryafatmala13 - Bertanggung jawab dalam membuat dan mengatur tampilan aplikasi menggunakan CSS
     2. I Wayan Krisna Eka Putra - 240030067 - krisnaputra06 krisna - Membuat Todo.php, TodoRepository, dan Index
     3. Putu Agung Wira Permana Pendit - 240030189 - Wirapermana - Membuat config dan Todo.sql
-    4. Gusti ngurah Putu asdika Mahardiasa - 240030261 - AsdhikaMahardiasa - Mengembangkan fitur CRUD
+    4. Gusti ngurah Putu asdika Mahardiasa - 240030261 - AsdhikaMahardiasa - Mengembangkan fitur CRUD.
 
 
 3. Lingkungan Pengembangan
