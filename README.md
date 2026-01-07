@@ -27,7 +27,14 @@ Penjelasan Singkat Fungsi Aplikasi
     - Update: Mengubah judul, deskripsi, dan status todo
     - Delete: Menghapus todo berdasarkan ID
 
-2. Lingkungan Pengembangan
+2. Daftar anggota
+   - Arya Putra Fatmala - 240030211
+   - I Wayan Krisna Eka Putra - 240030067
+   - Putu Agung Wira Permana Pendit - 240030189
+   - Gusti ngurah Putu asdika Mahardiasa - 240030261
+
+
+3. Lingkungan Pengembangan
 
 Bahasa dan Tools:
 - PHP: 8.x
@@ -36,7 +43,7 @@ Bahasa dan Tools:
 - Front-End: HTML dan CSS
 - Koneksi Database: PDO (PHP Data Objects)
 
-3. Hasil Pengembangan
+4. Hasil Pengembangan
 
 Fitur yang berhasil diimplementasikan:
 - CRUD Todo List
@@ -44,7 +51,7 @@ Fitur yang berhasil diimplementasikan:
 - Pemisahan logika database menggunakan Repository
 - Tampilan HTML sederhana
 
-4. Struktur Folder
+5. Struktur Folder
 ```
     todolist
     │
@@ -65,7 +72,7 @@ Fitur yang berhasil diimplementasikan:
     ├── todolist.sql
     └── README.md
 ```
-5. Penjelasan File Utama
+6. Penjelasan File Utama
 
     1. config.php
         - Mengatur koneksi database menggunakan PDO
@@ -81,7 +88,7 @@ Fitur yang berhasil diimplementasikan:
             - update(id, judul, deskripsi, status)
             - delete(id)
 
-6. Cara Instalasi dan Menjalankan Aplikasi
+7. Cara Instalasi dan Menjalankan Aplikasi
 
 Import Database
 
@@ -118,7 +125,7 @@ Buka browser dan akses:
 ```
     http://localhost:8000
 ```
-7. Contoh Skenario Uji Singkat
+8. Contoh Skenario Uji Singkat
 
 Tambah Data
 - Isi judul dan deskripsi
