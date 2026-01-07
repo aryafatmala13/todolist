@@ -113,7 +113,7 @@ Edit file `config.php`:
     $host = "localhost";
     $dbname = "todo_list";
     $user = "root";
-    $pass = "";
+    $pass = ""; (masukan Password sesuai dengan password mysql)
 ```
 Menjalankan Aplikasi
 
