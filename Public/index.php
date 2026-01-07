@@ -1,9 +1,15 @@
 <?php
 
+// Koneksi database
 require_once __DIR__ . '/../config.php';
+
+// Repository Todo
 require_once __DIR__ . '/../src/TodoRepository.php';
 
+// Membuat object repository
 $repo = new TodoRepository($pdo);
+
+// Mengambil semua data todo
 $todos = $repo->getAll();
 ?>
 
@@ -11,6 +17,8 @@ $todos = $repo->getAll();
 <html>
 <head>
     <title>Todo List</title>
+
+    <!-- File CSS -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,6 +26,7 @@ $todos = $repo->getAll();
 <div class="container">
     <h2>Todo List</h2>
 
+    <!-- Form tambah todo -->
     <form action="create.php" method="post">
     <input type="text" name="judul" placeholder="Judul" required>
     <textarea name="deskripsi" placeholder="Deskripsi"></textarea>
@@ -26,6 +35,7 @@ $todos = $repo->getAll();
 
 <hr>
 
+ <!-- Daftar todo -->
 <ul>
 <?php foreach ($todos as $todo): ?>
     <li>
@@ -35,8 +45,11 @@ $todos = $repo->getAll();
         <span class="status-badge">Status: <?= htmlspecialchars($todo->status) ?></span>
 
         <div style="margin-top: 10px;">
-                <a href="edit.php?id=<?= $todo->id ?>" class="btn-edit">Edit</a>
 
+            <!-- Link edit -->
+                <a href="edit.php?id=<?= $todo->id ?>" class="btn-edit">Edit</a>
+                
+            <!-- Form hapus -->
             <form action="delete.php" method="post" style="display:inline">
                 <input type="hidden" name="id" value="<?= $todo->id ?>">
                 <button type="submit">Hapus</button>
